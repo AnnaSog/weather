@@ -1,0 +1,9 @@
+.weather {
+    width: 60%;
+    font-size: 20px;
+    line-height: 23px;
+    color: #fff;
+}
+.temp {
+    font-size: 27px;
+}

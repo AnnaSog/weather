@@ -1,0 +1,25 @@
+.info {
+    height: 68vh;
+    padding: 0 15px;
+    background: url("./unnamed.jpg") center center no-repeat;
+    background-blend-mode: multiply;
+    background-color: #484747;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:  rgb(255 255 255 / 88%);
+}
+
+h1 {
+    font-weight: bold;
+    color: #fff;
+}
+
+h5 {
+    margin-top: 10px;
+    color: #e4e4e4;
+    font-weight: bold;
+}
