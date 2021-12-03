@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback} from "react";
 
 import Form from '../form/Form';
 import WeatherService from '../../services/WeatherService';
@@ -17,8 +17,8 @@ function App() {
 
   const updateCity = (e) => {
     e.preventDefault();
-    const city = e.target.elements.city.value
-    
+    const city = e.target.elements.city.value;
+     
     if(city) {      //если город внесен, то заработают все действия 
 
       clearError();
@@ -42,7 +42,6 @@ function App() {
   return (
     <div className="App">
       <div className="main">
-    
         <div className="info" >
             <Info/>
         </div>
