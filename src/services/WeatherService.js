@@ -1,30 +1,37 @@
 import { useCallback } from "react";
 
 const  WeatherService = () =>  {
-
-    const getWeather = useCallback (async (city) => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e897d3d88e95bb05e8d05bbc09c2c794`;
-        const res = await fetch(url)
+   
+    const getResource = useCallback (async (url) =>  { 
+        let res = await fetch(url);
         
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, status: ${res.status}`);
         }
-        
-        const data = await res.json();
-        return _transformWeather(data); 
-    }, []); 
 
-    const _transformWeather = (data) => {
+        const data = await res.json();  //получим данные в формате json
+        return data; 
+
+    }, []);
+
+    const getWeather = async (city) => {
+        const res = await getResource( `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e897d3d88e95bb05e8d05bbc09c2c794`)
+        return _transformWeather(res);
+        // return res;
+        
+    } 
+
+    const _transformWeather = (res) => {
         return {
-            city: data.name,
-            country: data.sys.country,
-            temp: Math.round(data.main.temp),
-            feelsLike: Math.round(data.main.feels_like),
-            pressure: data.main.pressure,
-            humidity: data.main.humidity,
-            wind: data.wind.speed,
-            icon:data.weather[0].main,
-            description: data.weather[0].description
+            city: res.name,
+            country: res.sys.country,
+            temp: Math.round(res.main.temp),
+            feelsLike: Math.round(res.main.feels_like),
+            pressure: res.main.pressure,
+            humidity: res.main.humidity,
+            wind: res.wind.speed,
+            icon:res.weather[0].main,
+            description: res.weather[0].description
         }
     }
 
