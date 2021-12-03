@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 
 const  WeatherService = () =>  {
-    const _apiKey = 'e897d3d88e95bb05e8d05bbc09c2c794';
    
     const getResource = useCallback (async (url) =>  { 
         let res = await fetch(url);
@@ -16,7 +15,7 @@ const  WeatherService = () =>  {
     }, []);
 
     const getWeather = async (city) => {
-        const res = await getResource( `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${_apiKey}`)
+        const res = await getResource( `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e897d3d88e95bb05e8d05bbc09c2c794`)
         return _transformWeather(res);
         // return res;
         
