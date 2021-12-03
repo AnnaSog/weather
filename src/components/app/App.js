@@ -26,7 +26,7 @@ function App() {
         .then(res =>{
             setCity(res.city)
             setWeather(res)
-            console.log(res)
+            // console.log(res)
           })
         .catch((err) => {
           setError(err.message)

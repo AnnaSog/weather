@@ -15,9 +15,8 @@ const Weather = ({city, weather}) => {
                     <p>Pressure: {pressure}hPa</p>
                     <p>Humidity: {humidity} %</p>
                     <p>Wind: {wind} m/s</p>
-                    
                 </div>
-             : null }
+             : null } 
         </div>
     )  
 }
