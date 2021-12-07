@@ -22,6 +22,7 @@ function App() {
     if(city) {      //если город внесен, то заработают все действия 
 
       clearError();
+      clearWeather();
       getWeather(city)
         .then(res =>{
             setCity(res.city)
@@ -37,6 +38,10 @@ function App() {
   //фун-ия по очистке ошибок, по умолчанию она не будет очищаться
   const clearError = useCallback( ()=> {
     setError(null)              //сообщение об ошибке исчезнет
+  }, []);
+
+  const clearWeather = useCallback( ()=> {
+    setWeather(null)             //сообщение об ошибке исчезнет
   }, []);
 
   return (
