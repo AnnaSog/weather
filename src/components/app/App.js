@@ -22,7 +22,6 @@ function App() {
     if(city) {      //если город внесен, то заработают все действия 
 
       clearError();
-      clearWeather();
       getWeather(city)
         .then(res =>{
             setCity(res.city)
@@ -40,10 +39,6 @@ function App() {
     setError(null)              //сообщение об ошибке исчезнет
   }, []);
 
-  const clearWeather = useCallback( ()=> {
-    setWeather(null)             //сообщение об ошибке исчезнет
-  }, []);
-
   return (
     <div className="App">
       <div className="main">
@@ -56,6 +51,7 @@ function App() {
           <Weather 
             city={city}
             weather={weather}
+            error={error}
           />
         </div>
       </div>     
