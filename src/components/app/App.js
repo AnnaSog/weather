@@ -30,6 +30,8 @@ function App() {
           })
         .catch((err) => {
           setError(err.message)
+          setWeather(err.message)
+          setCity('')
         })
     }
   } 
@@ -51,7 +53,6 @@ function App() {
           <Weather 
             city={city}
             weather={weather}
-            error={error}
           />
         </div>
       </div>     

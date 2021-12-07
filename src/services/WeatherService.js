@@ -17,14 +17,14 @@ const  WeatherService = () =>  {
 
     const _transformWeather = (data) => {
         return {
-            city: data.name,
+            city: data.name + ',',
             country: data.sys.country,
-            temp: Math.round(data.main.temp),
-            feelsLike: Math.round(data.main.feels_like),
-            pressure: data.main.pressure,
-            humidity: data.main.humidity,
-            wind: data.wind.speed,
-            icon:data.weather[0].main,
+            temp: Math.round(data.main.temp) + "°C",
+            feelsLike: "Feels like: " + Math.round(data.main.feels_like) + "°C",
+            pressure: "Pressure: " + data.main.pressure + ' hPa',
+            humidity: "Humidity: " + data.main.humidity + ' %',
+            wind: 'Wind: ' + data.wind.speed + " m/s",
+            icon:data.weather[0].main +',' ,
             description: data.weather[0].description
         }
     }
